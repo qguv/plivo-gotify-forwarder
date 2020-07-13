@@ -1,0 +1,10 @@
+[Unit]
+Description=Forward incoming SMS from Plivo to Gotify
+
+[Service]
+WorkingDirectory=/usr/local/share/plivo-gotify-forwarder
+ExecStart=/usr/bin/pipenv run python plivo-gotify-forwarder.py
+SyslogIdentifier=plivo-gotify-forwarder
+
+[Install]
+WantedBy=multi-user.target
